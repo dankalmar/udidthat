@@ -2,7 +2,8 @@ Udidthat::Application.routes.draw do
 
   devise_for :users
 
-   resources :entries 
+   resources :entries
+  
 
   root to: 'entries#index'
 

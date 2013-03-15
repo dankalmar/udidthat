@@ -15,6 +15,7 @@ class EntriesController < ApplicationController
 		end
 
 		@entry = Entry.new
+		@users = User.all
 	end
 
 	def new
@@ -23,6 +24,7 @@ class EntriesController < ApplicationController
 
 	def create
 		@entry = Entry.new params[:entry]
+		@entry.user_id = current_user.id
 
 		if @entry.save
 			redirect_to entries_path

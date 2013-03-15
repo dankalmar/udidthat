@@ -1,7 +1,6 @@
 Udidthat::Application.routes.draw do
 
-   resources :entries do
-  end
+   resources :entries 
 
   root to: 'entries#index'
 

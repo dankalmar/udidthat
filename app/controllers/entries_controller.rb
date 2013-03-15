@@ -13,6 +13,8 @@ class EntriesController < ApplicationController
 		@entries_month = Entry.where(created_at: @date.beginning_of_month..@date.end_of_month).map do |d|
 			d.created_at.to_date
 		end
+
+		@entry = Entry.new
 	end
 
 	def new

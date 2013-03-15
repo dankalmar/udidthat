@@ -1,6 +1,7 @@
 <%= link_to "Previous Month", entries_path(day: @date - 1.month) %>
 
-	<%= @date.strftime("%B") %>
+	<h1><%= @date.strftime("%B") %></h1>
+	
 <%= link_to "Next Month", entries_path(day: @date + 1.month) %>
 
 <table>

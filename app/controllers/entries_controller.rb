@@ -1,4 +1,7 @@
 class EntriesController < ApplicationController
+	
+	before_filter :authenticate_user!
+
 	def index
 		if params[:day]
 			@date = params[:day].to_date

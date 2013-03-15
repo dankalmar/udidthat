@@ -5,7 +5,12 @@
 
 <%= render 'form' %>
 
-
-<% @entries.each do |e| %>
-	<%= e.did %>
-<% end %>
+<table>
+	<ul>
+	<% @entries.each do |e| %>
+	<li>
+		<%= e.did %>
+	</li>
+	<% end %>
+	</ul>
+</table>

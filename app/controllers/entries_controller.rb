@@ -34,12 +34,12 @@ class EntriesController < ApplicationController
 	end
 
 	def edit
-	@entry = Entry.find(params[:id])
+		@entry = Entry.find(params[:id])
 	end
 
 	def update
 		@entry = Entry.find(params[:id])
-		if entry.update_attributes params[:entry]
+		if @entry.update_attributes params[:entry]
 			redirect_to entries_path
 		else
 			render :edit

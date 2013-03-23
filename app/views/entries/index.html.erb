@@ -5,13 +5,28 @@
 
 <%= render 'form' %>
 
+
+
 <table>
 	<ul>
-	<% @entries.each do |e| %>
-	<li>
-		<%= e.did %>
-		<%= e.user.user_name %>
-	</li>
-	<% end %>
+
+	<% @users.each do |u| %>
+		<h1><%= t = u.user_name %></h1>
+
+				<% @entries.each do |e| %>
+     				<li>
+          			
+          			<%= e.did %>
+          			<%= link_to "Edit", edit_entry_path(e) %>
+
+          			
+     				</li>
+     			<% end %>
+    			 </ul>
+<% end %>
+		
+	
 	</ul>
+
+
 </table>

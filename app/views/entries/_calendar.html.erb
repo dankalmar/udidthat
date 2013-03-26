@@ -1,45 +1,77 @@
-<%= link_to "Previous Month", entries_path(day: @date - 1.month) %>
 
-	<h1><%= @date.strftime("%B") %></h1>
+
+
+<style>
+  .week {
+    clear: both;
+  }
+  .day {
+    float: left;
+    border-top: solid 1px #666;
+    border-left: solid 1px #666;
+    border-right: solid 1px #666;
+    border-bottom: solid 1px #666;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background: white;
+    position: relative;
+    cursor: pointer;
+  }
+  .week .day:last-child {
+    border-right: solid 1px #666;
+  }
+  .calendar .week:last-child .day {
+    border-bottom: solid 1px #666;
+  }
+  .week .day:first-child, .week .day:last-child {
+    background-color: #fafaff;
+  }
+  .calendar {
+    width: 500px;
+    padding: 30px;
+    overflow: hidden;
+  }
+  .header {
+
+  }
+ 
+</style>
+
+
+
+
+
+
 	
-<%= link_to "Next Month", entries_path(day: @date + 1.month) %>
+	
+
+
+
+<div class="calendar well">
+	<div class="header lead" style="text-align: center">
+		<%= link_to "&larr;".html_safe, entries_path(day: @date - 1.month) %>
+		<%= @date.strftime("%B") %>
+		<%= link_to "&rarr;".html_safe, entries_path(day: @date + 1.month) %>
+	</div>
 
 <table>
-	<td class="span 2">
-		Monday
-	</td>
 	
-	<td class="span 2">
-		Tuesday
-	</td>
-
-	<td class="span 2">
-		Wednesday
-	</td>
-
-	<td class="span 2">
-		Thursday
-	</td>
-
-	<td class="span 2">
-		Friday
-	</td>
-
-	<td class="span 2">
-		Saturday
-	</td>
-
-	<td class="span 2">
-		Sunday
-	</td>
-	
+ <div class='week'>
 	<% (@date.beginning_of_month.beginning_of_week..@date.end_of_month.end_of_week).each do |day| %>
 	<% if day.monday? %>
+</div>
 	<tr>
+
 	<% end %>
 
 	<td>
+<div class='day'>
 		<%= link_to day.day, entries_path(day: day) %>
+</div>
+
 	</td>
 	<% end %>
 </table>
+</div>
+

@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require bootstrap-editable
+//= require bootstrap-editable-rails
+//= require bootstrap-editable-inline
 //= require_tree .
+

@@ -29,7 +29,7 @@ class EntriesController < ApplicationController
 		if @entry.save
 			redirect_to entries_path
 		else
-			render :new
+			redirect_to entries_path
 		end	
 	end
 

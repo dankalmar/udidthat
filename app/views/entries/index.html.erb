@@ -1,33 +1,24 @@
-
-
-
 <%= render "calendar" %>
-
 <%= render 'form' %>
-
 
 
 <table>
 	<ul>
 
-	<% @users.each do |u| %>
-		<h1><%= u.user_name %></h1>
-		
-
-				<% @entries.each do |e| %>
-     				<li>
-          			
-          			<%= e.did %>
-          			<%= link_to "Edit", edit_entry_path(e) %>
-
-          			
-     				</li>
-     			<% end %>
-    			 </ul>
-<% end %>
-		
 	
-	</ul>
-
+    <% @users.each do |u| %>
+             <h1><%= u.user_name %></h1>
+                      <% u.entries.for_date(@date).each do |e| %>
+                         <li>
+                         <%= e.did %>
+                         <%= link_to "Edit", edit_entry_path(e) %>
+                         </li>
+                       <% end %>
+  </ul>
+    <% end %>
 
 </table>
+
+
+
+

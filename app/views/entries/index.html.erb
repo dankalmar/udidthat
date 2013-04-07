@@ -1,12 +1,16 @@
-<%= render "calendar" %>
-<%= render 'form' %>
+<div class="container-fluid">
+  <div class="row fluid">
+    <div class="span8">
+    <%= render "calendar" %>
+    <%= render 'form' %>
+    </div>
 
-
-<table>
-	<ul>
+    <div class="span4">
+      <table>
+	      <ul>
 
 	
-    <% @users.each do |u| %>
+          <% @users.each do |u| %>
              <h1><%= u.user_name %></h1>
                       <% u.entries.for_date(@date).each do |e| %>
                          <li>
@@ -14,10 +18,14 @@
                          <%= link_to "Edit", edit_entry_path(e) %>
                          </li>
                        <% end %>
-  </ul>
-    <% end %>
+         </ul>
+           <% end %>
+      </table>
+    </div>
+   </div>
+  </div>
+</div>
 
-</table>
 
 
 
